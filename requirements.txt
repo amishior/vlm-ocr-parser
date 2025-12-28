@@ -1,2 +1,4 @@
-paddlepaddle==3.0.0
-paddleocr>=3.0.0
+# If you only want to use the basic text recognition feature (returns text position coordinates and content), including the PP-OCR series
+python -m pip install paddleocr
+# If you want to use all features such as document parsing, document understanding, document translation, key information extraction, etc.
+# python -m pip install "paddleocr[all]"

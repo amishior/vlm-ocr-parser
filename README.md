@@ -1,4 +1,3 @@
-````markdown
 # vlm-ocr-parser
 
 [中文](#中文) | [English](#english)
@@ -30,7 +29,7 @@ pip install -r requirements.txt
 
 ### 🚀 快速开始（示例）
 
-仓库提供了 `example/` 目录以及示例图片 `1.png ~ 9.png`，你可以用它们快速验证“能跑通”。
+仓库提供了 `example/` 目录以及示例图片 `1.png ~ 9.png`，可以用它们快速验证。
 
 推荐用法（思路示例）：
 
@@ -38,10 +37,8 @@ pip install -r requirements.txt
 2. 运行示例/服务（见下方「运行方式」）
 3. 查看输出的 Markdown / JSON 文件
 
-> 由于仓库内具体函数入口可能会随着你后续重构调整，这里不强行写死 import 路径；你可以把你项目里“对外暴露的主入口函数/类名”补充到下面这段代码块里，README 就会非常完整。
-
 ```python
-# TODO: 把这里替换成你仓库实际对外暴露的入口
+# TODO: 把这里替换成实际对外暴露的入口
 # from ocr_vl import PaddleOCRVLWrapper
 
 # parser = PaddleOCRVLWrapper(device="auto")
@@ -49,21 +46,17 @@ pip install -r requirements.txt
 # parser.save(result, out_dir="outputs/", formats=["md", "json"])
 ```
 
-### 🧩 运行方式（建议你在仓库里明确 2 套入口）
+### 🧩 运行方式
 
-为了让使用者更顺手，建议你最终在 README 里明确：
 
-* **库式调用（Python import）**：适合接入你自己的系统/RAG流水线
+* **库式调用（Python import）**：适合接入自己的系统/RAG流水线
 * **服务式调用（HTTP API）**：适合给别的同事/下游系统直接调用
 
-从你当前目录结构看，可能已经在往这个方向组织：
 
 * `ocr_vl/`：OCR/VL 解析封装核心模块
 * `vl_service/`：VL 推理或对外服务相关
 * `ocr_service/`：OCR 服务（路由/接口/封装）
 * `app.py`：可能是一个启动入口（例如 FastAPI/Gradio/CLI）
-
-> 这部分目录来自仓库文件树。你可以在每个目录下补一个简短 README 或在本文「项目结构」里补齐说明。
 
 ### 📁 项目结构
 
@@ -177,4 +170,3 @@ For stable downstream integration, consider exporting JSON with:
 Consider adding a LICENSE file (MIT/Apache-2.0).
 
 [1]: https://github.com/amishior/vlm-ocr-parser.git "GitHub - amishior/vlm-ocr-parser"
-````

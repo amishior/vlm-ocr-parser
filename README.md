@@ -177,3 +177,4 @@ For stable downstream integration, consider exporting JSON with:
 Consider adding a LICENSE file (MIT/Apache-2.0).
 
 [1]: https://github.com/amishior/vlm-ocr-parser.git "GitHub - amishior/vlm-ocr-parser"
+````

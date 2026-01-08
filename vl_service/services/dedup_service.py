@@ -143,7 +143,6 @@ def deduplicate_batch_strict(batch: Dict[str, Any]) -> Dict[str, Any]:
             if not norm_j:
                 continue
 
-            # ---- 标题块：只做“完全相等去重” ----
             if blk["is_heading"] and prev["is_heading"]:
                 if norm_i == norm_j:
                     blk["keep"] = False
@@ -153,7 +152,6 @@ def deduplicate_batch_strict(batch: Dict[str, Any]) -> Dict[str, Any]:
                 else:
                     continue
 
-            # ---- 普通文本块：精细去重 ----
             len_i = len(norm_i)
             len_j = len(norm_j)
 

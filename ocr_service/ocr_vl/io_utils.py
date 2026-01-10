@@ -14,9 +14,6 @@ def is_http_url(path: str) -> bool:
 
 
 def list_images_in_dir(dir_path: str) -> List[ImageInput]:
-    """
-    遍历目录，返回所有图片文件的 ImageInput 列表。
-    """
     p = Path(dir_path)
     if not p.is_dir():
         raise FileNotFoundError(f"dir_path is not a directory: {dir_path}")
@@ -29,10 +26,6 @@ def list_images_in_dir(dir_path: str) -> List[ImageInput]:
 
 
 def download_to_local(url: str) -> str:
-    """
-    简单 HTTP 下载到临时文件。
-    生产环境可改为 OSS SDK / 内网网关。
-    """
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
 
@@ -47,11 +40,6 @@ def download_to_local(url: str) -> str:
 
 
 def ensure_local_path(path: str) -> str:
-    """
-    入参可以是本地路径或 HTTP(S) URL：
-    - 本地路径：原样返回
-    - URL：下载到临时文件后返回本地路径
-    """
     if is_http_url(path):
         return download_to_local(path)
     return path

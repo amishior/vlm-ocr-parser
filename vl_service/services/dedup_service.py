@@ -1,5 +1,4 @@
 # services/dedup_service.py
-# -*- coding: utf-8 -*-
 
 from __future__ import annotations
 from typing import List, Dict, Any
@@ -70,7 +69,7 @@ def split_markdown_to_blocks(md: str) -> List[str]:
     return [b for b in blocks if b.strip()]
 
 
-# ============== 辅助：记录删除信息 ==============
+# ============== 记录删除信息 ==============
 
 def _record_removed(images: List[Dict[str, Any]], blk: Dict[str, Any], reason: str) -> None:
     page_idx = blk["page_idx"]
